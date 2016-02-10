@@ -32,10 +32,10 @@ public class Login extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         userText = new javax.swing.JTextField();
         passwordText = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("CinemaService");
+        setTitle("CinemaServiceLogin");
         setResizable(false);
 
         jLabel1.setText("User:");
@@ -48,7 +48,7 @@ public class Login extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("Login");
+        loginButton.setText("Login");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,7 +65,7 @@ public class Login extends javax.swing.JDialog {
                     .addComponent(passwordText)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 44, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(loginButton)))
                 .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
@@ -80,7 +80,7 @@ public class Login extends javax.swing.JDialog {
                     .addComponent(jLabel2)
                     .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(loginButton)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -134,9 +134,9 @@ public class Login extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton loginButton;
     private javax.swing.JTextField passwordText;
     private javax.swing.JTextField userText;
     // End of variables declaration//GEN-END:variables
