@@ -5,8 +5,6 @@
  */
 package pl.polsl.listeners;
 
-import pl.polsl.listeners.ManagerActionListeners;
-import pl.polsl.listeners.ConsultantActionListeners;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import pl.polsl.client.gui.ConsultantGUI;
@@ -28,13 +26,23 @@ public class LoginActionListeners {
     String consultantName = "konsultant";
     String consultantPassword = "haslo";
 
+    /**
+     *default constructor
+     */
     public LoginActionListeners() {
     }
 
+    /**
+     *Constructor for action listeners for login window
+     * @param window login frame
+     */
     public LoginActionListeners(Login window) {
         loginWindow = window;
     }
 
+    /**
+     *Method that adds action listeners to login window
+     */
     public void addActionListeners() {
 
         loginWindow.getLoginButton().addActionListener((ActionEvent e) -> {

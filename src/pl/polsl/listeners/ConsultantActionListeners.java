@@ -17,14 +17,25 @@ public class ConsultantActionListeners {
     
     private ConsultantGUI window;
 
+    /**
+     *default constructor
+     */
     public ConsultantActionListeners() {
     }
     
+    /**
+     *Constructor of action listeners class
+     * 
+     * @param consultantWindow consultant window frame
+     */
     public ConsultantActionListeners(ConsultantGUI consultantWindow){
         window=consultantWindow;
     }
     
-     public void addActionListeners() {
+    /**
+     *Method that adds action listeners to window
+     */
+    public void addActionListeners() {
 
         window.getAcceptButton().addActionListener((ActionEvent e) -> {
             

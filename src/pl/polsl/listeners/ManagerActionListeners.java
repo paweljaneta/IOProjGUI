@@ -17,17 +17,27 @@ public class ManagerActionListeners {
 
     private ManagerGUI window;
 
+    /**
+     *default constructor
+     */
     public ManagerActionListeners() {
     }
 
-    public ManagerActionListeners(ManagerGUI consultantWindow) {
-        window = consultantWindow;
+    /**
+     *Constructor of action listeners class
+     * @param managerWindow manager window frame
+     */
+    public ManagerActionListeners(ManagerGUI managerWindow) {
+        window = managerWindow;
     }
 
     private int selectedRow(){
         return window.getTable().getSelectedRow();
     }
     
+    /**
+     *adds action listeners to manager window frame
+     */
     public void addActionListeners() {
 
         //na podstawie wybanego wiersza w tablicy autoryzować go

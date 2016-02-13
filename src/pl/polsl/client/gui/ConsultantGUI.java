@@ -88,14 +88,14 @@ public class ConsultantGUI extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+                {null, null, null, null, null}
             },
             new String [] {
-                "Film", "Numer sali", "Data", "Cena biletu"
+                "Film", "Numer sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -107,6 +107,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel1.setText("NR Sali");
@@ -283,6 +284,12 @@ public class ConsultantGUI extends javax.swing.JFrame {
         return jTable1;
     }
 
+    /**
+     *Sets column names and values in cells
+     * format: {{"",""},{"",""},{"",""}} two columns, three rows
+     * @param columns table of column names
+     * @param values table of values in cells
+     */
     public void setTable(String[] columns,String[][] values) {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 values,

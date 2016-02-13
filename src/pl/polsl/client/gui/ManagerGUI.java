@@ -216,20 +216,26 @@ public class ManagerGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_helpAboutActionPerformed
 
-
-    public javax.swing.JButton getAuthorizeButton(){
+    public javax.swing.JButton getAuthorizeButton() {
         return authorizeButton;
     }
-    
-    public javax.swing.JButton getRefuseButton(){
+
+    public javax.swing.JButton getRefuseButton() {
         return refuseButton;
     }
-    
-    public javax.swing.JTable getTable(){
+
+    public javax.swing.JTable getTable() {
         return jTable1;
     }
-    
-        public void setTable(String[] columns,String[][] values) {
+
+    /**
+     * Sets column names and values in cells format: {{"",""},{"",""},{"",""}}
+     * two columns, three rows
+     *
+     * @param columns table of column names
+     * @param values table of values in cells
+     */
+    public void setTable(String[] columns, String[][] values) {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 values,
                 columns
@@ -243,15 +249,15 @@ public class ManagerGUI extends javax.swing.JFrame {
             }
         });
     }
-    
-    public javax.swing.JMenuItem getFileExit(){
+
+    public javax.swing.JMenuItem getFileExit() {
         return fileExit;
     }
-    
-    public javax.swing.JMenuItem getHelpAbout(){
+
+    public javax.swing.JMenuItem getHelpAbout() {
         return helpAbout;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton authorizeButton;
     private javax.swing.JMenuItem fileExit;
