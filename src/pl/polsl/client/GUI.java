@@ -6,7 +6,7 @@
 package pl.polsl.client;
 
 import pl.polsl.client.gui.Login;
-import pl.polsl.client.gui.LoginActionListeners;
+import pl.polsl.listeners.LoginActionListeners;
 
 /**
  *

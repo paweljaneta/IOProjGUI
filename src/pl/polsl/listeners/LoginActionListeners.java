@@ -3,10 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.polsl.client.gui;
+package pl.polsl.listeners;
 
+import pl.polsl.listeners.ManagerActionListeners;
+import pl.polsl.listeners.ConsultantActionListeners;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
+import pl.polsl.client.gui.ConsultantGUI;
+import pl.polsl.client.gui.Login;
+import pl.polsl.client.gui.ManagerGUI;
 
 /**
  *
@@ -40,6 +45,12 @@ public class LoginActionListeners {
                     javax.swing.SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
                             ManagerGUI window = new ManagerGUI();
+                            
+                            String[] columns ={"Nazwa firmy","Numer sali","Godzina","Data"};
+                            String[][] values = {{"Andrzej i spóła","1","11:20","22.11.1990"},{"Andrzej","2","15:20","11.11.2222"},{"spóła","3","11:50","22.11.3333"}};
+                            
+                            window.setTable(columns, values);
+                            
                             ManagerActionListeners listeners = new ManagerActionListeners(window);
                             listeners.addActionListeners();
                             window.setVisible(true);
@@ -55,6 +66,13 @@ public class LoginActionListeners {
                     javax.swing.SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
                             ConsultantGUI window = new ConsultantGUI();
+                            
+                            String[] columns={"Film","Numer Sali","Data rozpoczęcia","Data zakończenia","Zarezerwowano"};
+                            String[][] data = {{"Kaj je Nemo","1","22.10.2017","23.10.2017","1"},{"Elektronicky mordulec","2","16.08.2016","16.08.2016","1"},{"Jeszcze inszy film","3","13.02.2222","13.02.2223","22,22"}};
+
+                            
+                            window.setTable(columns,data);
+                            
                             ConsultantActionListeners listeners = new ConsultantActionListeners(window);
                             listeners.addActionListeners();
                             window.setVisible(true);

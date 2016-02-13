@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.polsl.client.gui;
+package pl.polsl.listeners;
 
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
+import pl.polsl.client.gui.ConsultantGUI;
 
 /**
  *
