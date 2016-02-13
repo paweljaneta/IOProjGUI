@@ -5,17 +5,33 @@
  */
 package pl.polsl.client;
 
+import pl.polsl.client.gui.Login;
+import pl.polsl.client.gui.LoginActionListeners;
+
 /**
  *
  * @author Paweł
  */
 public class GUI {
 
+    private static void createAndShowGUI() {
+        Login dialog = new Login();
+        LoginActionListeners actionListeners = new LoginActionListeners(dialog);
+        actionListeners.addActionListeners();
+        dialog.setVisible(true);
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+
     }
-    
+
 }

@@ -30,7 +30,7 @@ public class Client {
         try {
             Socket clientSocket = new Socket(ip, port);
             EventQueue.invokeLater(() -> {
-                Login login = new Login(null, true);
+                Login login = new Login();
                 login.setVisible(true);
             });
         } catch (IOException ex) {

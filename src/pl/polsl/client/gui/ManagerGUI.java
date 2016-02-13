@@ -43,7 +43,6 @@ public class ManagerGUI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         fileExit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         helpMenu = new javax.swing.JMenu();
         helpAbout = new javax.swing.JMenuItem();
 
@@ -181,9 +180,6 @@ public class ManagerGUI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         helpMenu.setText("Help");
 
         helpAbout.setText("About");
@@ -220,41 +216,31 @@ public class ManagerGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_helpAboutActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManagerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManagerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManagerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManagerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ManagerGUI().setVisible(true);
-            }
-        });
+    public javax.swing.JButton getAuthorizeButton(){
+        return authorizeButton;
     }
-
+    
+    public javax.swing.JButton getRefuseButton(){
+        return refuseButton;
+    }
+    
+    public javax.swing.JTable getTable(){
+        return jTable1;
+    }
+    
+    public void setTable(javax.swing.JTable table){
+        jTable1=table;
+    }
+    
+    public javax.swing.JMenuItem getFileExit(){
+        return fileExit;
+    }
+    
+    public javax.swing.JMenuItem getHelpAbout(){
+        return helpAbout;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton authorizeButton;
     private javax.swing.JMenuItem fileExit;
@@ -262,7 +248,6 @@ public class ManagerGUI extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
