@@ -5,7 +5,11 @@
  */
 package pl.polsl.client;
 
+import java.io.IOException;
+import java.net.Socket;
 import pl.polsl.client.gui.Login;
+import pl.polsl.client.protocol.ClientProtocol;
+import pl.polsl.client.protocol.ConnectionVariables;
 import pl.polsl.listeners.LoginActionListeners;
 
 /**
@@ -16,7 +20,9 @@ public class GUI {
 
     private static void createAndShowGUI() {
         Login dialog = new Login();
-        LoginActionListeners actionListeners = new LoginActionListeners(dialog);
+        LoginActionListeners actionListeners;
+
+        actionListeners = new LoginActionListeners(dialog);
         actionListeners.addActionListeners();
         dialog.setVisible(true);
     }
