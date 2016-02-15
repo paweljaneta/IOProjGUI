@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.Socket;
 import pl.polsl.client.gui.Login;
 import javax.swing.JOptionPane;
+import pl.polsl.client.protocol.ClientProtocol;
+import pl.polsl.client.protocol.ConnectionVariables;
 import pl.polsl.listeners.LoginActionListeners;
 
 /**
@@ -22,17 +24,17 @@ public class Client {
      */
     @SuppressWarnings("ResultOfObjectAllocationIgnored")
     public static void main(String[] args) {
-        Integer port = 23;
+        Integer port = 6789;
         String ip = "localhost";
         if (args.length == 2) {
             ip = args[0];
             port = Integer.parseInt(args[1]);
         }
         try {
-            Socket clientSocket = new Socket(ip, port);
+            ClientProtocol protocol = new ClientProtocol(new ConnectionVariables(new Socket(ip, port)));
             EventQueue.invokeLater(() -> {
                 Login dialog = new Login();
-                LoginActionListeners actionListeners = new LoginActionListeners(dialog);
+                LoginActionListeners actionListeners = new LoginActionListeners(dialog, protocol);
                 actionListeners.addActionListeners();
                 dialog.setVisible(true);
             });

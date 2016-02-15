@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import pl.polsl.client.gui.ConsultantGUI;
 import pl.polsl.client.gui.Login;
 import pl.polsl.client.gui.ManagerGUI;
+import pl.polsl.client.protocol.ClientProtocol;
 
 /**
  *
@@ -36,7 +37,7 @@ public class LoginActionListeners {
      *Constructor for action listeners for login window
      * @param window login frame
      */
-    public LoginActionListeners(Login window) {
+    public LoginActionListeners(Login window, ClientProtocol protocol) {
         loginWindow = window;
     }
 
