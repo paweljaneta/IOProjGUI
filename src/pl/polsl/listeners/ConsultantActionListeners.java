@@ -8,6 +8,7 @@ package pl.polsl.listeners;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import pl.polsl.client.gui.ConsultantGUI;
+import pl.polsl.client.protocol.ClientProtocol;
 
 /**
  *
@@ -16,6 +17,7 @@ import pl.polsl.client.gui.ConsultantGUI;
 public class ConsultantActionListeners {
     
     private ConsultantGUI window;
+    private ClientProtocol protocool;
 
     /**
      *default constructor
@@ -27,9 +29,11 @@ public class ConsultantActionListeners {
      *Constructor of action listeners class
      * 
      * @param consultantWindow consultant window frame
+     * @param clientProtocool communication protocool
      */
-    public ConsultantActionListeners(ConsultantGUI consultantWindow){
+    public ConsultantActionListeners(ConsultantGUI consultantWindow,ClientProtocol clientProtocool){
         window=consultantWindow;
+        protocool = clientProtocool;
     }
     
     /**
@@ -39,6 +43,9 @@ public class ConsultantActionListeners {
 
         window.getAcceptButton().addActionListener((ActionEvent e) -> {
             
+            if(!protocool.sendTransaction(window.getCompanyNameText().getText(), (String)window.getRoomCombo().getSelectedItem(), window.getTimeText().getText(), window.getDateText().getText())){
+                 JOptionPane.showMessageDialog(window, "Błąd akceptacji", "Accept error", JOptionPane.ERROR_MESSAGE);
+            }
             
         });
         

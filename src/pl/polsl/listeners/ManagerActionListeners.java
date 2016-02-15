@@ -8,6 +8,7 @@ package pl.polsl.listeners;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import pl.polsl.client.gui.ManagerGUI;
+import pl.polsl.client.protocol.ClientProtocol;
 
 /**
  *
@@ -16,6 +17,7 @@ import pl.polsl.client.gui.ManagerGUI;
 public class ManagerActionListeners {
 
     private ManagerGUI window;
+    private ClientProtocol protocool;
 
     /**
      *default constructor
@@ -26,9 +28,11 @@ public class ManagerActionListeners {
     /**
      *Constructor of action listeners class
      * @param managerWindow manager window frame
+     * @param clientProtocool connection protocool
      */
-    public ManagerActionListeners(ManagerGUI managerWindow) {
+    public ManagerActionListeners(ManagerGUI managerWindow, ClientProtocol clientProtocool) {
         window = managerWindow;
+        protocool = clientProtocool;
     }
 
     private int selectedRow(){
@@ -43,11 +47,27 @@ public class ManagerActionListeners {
         //na podstawie wybanego wiersza w tablicy autoryzować go
         window.getAuthorizeButton().addActionListener((ActionEvent e) -> {
 
-
+            if(selectedRow()>=0){
+                
+                 if(!protocool.acceptTransaction(Integer.toString(selectedRow()))){
+                      JOptionPane.showMessageDialog(window, "Błąd akceptacji", "Accept error", JOptionPane.ERROR_MESSAGE);
+                 }
+                 
+            }    
+            
         });
         //powinno działać prawie jak wyżej
         window.getRefuseButton().addActionListener((ActionEvent e) -> {
 
+            
+            if(selectedRow()>=0){
+                
+                 if(!protocool.refuseTransaction(Integer.toString(selectedRow()))){
+                      JOptionPane.showMessageDialog(window, "Błąd odmowy", "Refuse error", JOptionPane.ERROR_MESSAGE);
+                 }
+                 
+            } 
+            
         });
 
         window.getFileExit().addActionListener((ActionEvent e) -> {
