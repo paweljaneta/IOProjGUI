@@ -84,6 +84,25 @@ public class ConsultantActionListeners {
             window.getPriceText().setText("");
         });
 
+        window.getRefreshButton().addActionListener((ActionEvent e) -> {
+            String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"};
+
+            String[] values = protocool.getRoomsOccupancy();
+
+            String[][] data;
+
+            data = new String[values.length][5]; //jekby nie działało to zamienic
+
+            String colValues[];
+            for (int i = 0; i < values.length; i++) {
+                colValues = values[i].split(";");
+                for (int j = 0; j < 5; j++) {
+                    data[i][j] = colValues[j];
+                }
+            }
+
+            window.setTable(columns, data);
+        });
         window.getFileExit().addActionListener((ActionEvent e) -> {
             window.dispose();
         });
