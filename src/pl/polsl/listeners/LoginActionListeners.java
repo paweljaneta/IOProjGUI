@@ -48,7 +48,13 @@ public class LoginActionListeners {
 
     private void login() {
 
-        if (protocool.login(loginWindow.getUserText().getText(), loginWindow.getPasswordText().getText()).equals("manager")) {
+        String username = loginWindow.getUserText().getText();
+        String password = loginWindow.getPasswordText().getText();
+        String privLevel = protocool.login(username, password);
+        if (privLevel == null) {
+            JOptionPane.showMessageDialog(loginWindow, "Blad logowania", "Login error", JOptionPane.ERROR_MESSAGE);
+            loginWindow.dispose();
+        } else if (privLevel.equalsIgnoreCase("CHIEF")) {
             javax.swing.SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     ManagerGUI window = new ManagerGUI();
@@ -65,7 +71,7 @@ public class LoginActionListeners {
                     for (int i = 0; i < values.length; i++) {
                         colValues = values[i].split(";");
                         for (int j = 0; j < 4; j++) {
-                            data[i][j] = colValues[j+1];
+                            data[i][j] = colValues[j + 1];
                         }
                     }
 
@@ -77,7 +83,7 @@ public class LoginActionListeners {
                 }
             });
             loginWindow.dispose();
-        } else if (protocool.login(loginWindow.getUserText().getText(), loginWindow.getPasswordText().getText()).equals("consultant")) {
+        } else if (privLevel.equalsIgnoreCase("CONSULATNT")) {
             javax.swing.SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     ConsultantGUI window = new ConsultantGUI();
@@ -106,15 +112,11 @@ public class LoginActionListeners {
                 }
             });
             loginWindow.dispose();
-        } else {
-            JOptionPane.showMessageDialog(loginWindow, "Blad logowania", "Login error", JOptionPane.ERROR_MESSAGE);
         }
-
     }
-
-    /**
-     * Method that adds action listeners to login window
-     */
+        /**
+         * Method that adds action listeners to login window
+         */
     public void addActionListeners() {
 
         loginWindow.getUserText().addKeyListener(listener);
