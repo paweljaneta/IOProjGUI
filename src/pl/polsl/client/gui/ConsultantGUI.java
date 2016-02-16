@@ -52,6 +52,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
         endDateText = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        refreshButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         fileExit = new javax.swing.JMenuItem();
@@ -172,6 +173,8 @@ public class ConsultantGUI extends javax.swing.JFrame {
 
         jLabel9.setText("HH:MM");
 
+        refreshButton.setText("Odśwież zawartość tabeli");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -216,7 +219,10 @@ public class ConsultantGUI extends javax.swing.JFrame {
                         .addComponent(jLabel9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(116, 116, 116)
-                        .addComponent(jLabel8)))
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(refreshButton)))
                 .addContainerGap(543, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -263,7 +269,9 @@ public class ConsultantGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(acceptButton)
                     .addComponent(resignButton))
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(refreshButton)
+                .addContainerGap(163, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -426,6 +434,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> nrSaliCombo;
     private javax.swing.JTextField priceText;
+    private javax.swing.JButton refreshButton;
     private javax.swing.JButton resignButton;
     private javax.swing.JTextField timeText;
     // End of variables declaration//GEN-END:variables

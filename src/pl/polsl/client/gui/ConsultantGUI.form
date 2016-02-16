@@ -195,6 +195,10 @@
                               <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="543" max="32767" attributes="0"/>
                   </Group>
@@ -254,7 +258,9 @@
                           <Component id="acceptButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="resignButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="204" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="163" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -415,6 +421,11 @@
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
                 <Property name="text" type="java.lang.String" value="HH:MM"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="refreshButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Od&#x15b;wie&#x17c; zawarto&#x15b;&#x107; tabeli"/>
               </Properties>
             </Component>
           </SubComponents>

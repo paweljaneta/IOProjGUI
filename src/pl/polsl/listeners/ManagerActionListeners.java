@@ -100,6 +100,11 @@ public class ManagerActionListeners {
 
         });
 
+        window.getRefreshButton().addActionListener((ActionEvent e) -> {
+            refreshTable();
+            System.out.println("refresh");
+        });
+
         window.getFileExit().addActionListener((ActionEvent e) -> {
             window.dispose();
         });
@@ -113,7 +118,7 @@ public class ManagerActionListeners {
     }
 
     public void refreshTable() {
-        String[] columns = {"Nazwa firmy", "Numer sali", "Data", "Godzina"};
+        String[] columns = {"Nazwa firmy", "Numer sali", "Data", "Godzina","Cena"};
 
         String[] values = protocool.getTransactions();
 

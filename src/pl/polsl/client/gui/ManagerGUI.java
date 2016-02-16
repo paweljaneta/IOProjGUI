@@ -36,6 +36,7 @@ public class ManagerGUI extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         authorizeButton = new javax.swing.JButton();
         refuseButton = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -91,6 +92,8 @@ public class ManagerGUI extends javax.swing.JFrame {
             }
         });
 
+        refreshButton.setText("Odśwież zawartość tabeli");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -98,6 +101,8 @@ public class ManagerGUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(authorizeButton)
+                .addGap(144, 144, 144)
+                .addComponent(refreshButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(refuseButton)
                 .addGap(71, 71, 71))
@@ -117,7 +122,8 @@ public class ManagerGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(authorizeButton)
-                    .addComponent(refuseButton))
+                    .addComponent(refuseButton)
+                    .addComponent(refreshButton))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -204,7 +210,7 @@ public class ManagerGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         setSize(new java.awt.Dimension(766, 457));
@@ -225,6 +231,10 @@ public class ManagerGUI extends javax.swing.JFrame {
 
     public javax.swing.JButton getRefuseButton() {
         return refuseButton;
+    }
+    
+    public javax.swing.JButton getRefreshButton(){
+        return refreshButton;
     }
 
     public javax.swing.JTable getTable() {
@@ -279,6 +289,7 @@ public class ManagerGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton refreshButton;
     private javax.swing.JButton refuseButton;
     // End of variables declaration//GEN-END:variables
 }

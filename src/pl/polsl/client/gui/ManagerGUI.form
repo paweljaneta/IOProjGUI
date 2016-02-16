@@ -76,7 +76,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="1" pref="397" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -100,6 +100,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="authorizeButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                      <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="refuseButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
@@ -123,6 +125,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="authorizeButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="refuseButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -198,6 +201,11 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refuseButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="refreshButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Od&#x15b;wie&#x17c; zawarto&#x15b;&#x107; tabeli"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
