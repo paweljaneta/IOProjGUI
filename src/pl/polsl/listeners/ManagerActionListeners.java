@@ -7,12 +7,20 @@ import pl.polsl.client.gui.ManagerGUI;
 import pl.polsl.client.protocol.ClientProtocol;
 
 /**
- *
+ * Class with manager GUI action listeners
+ * 
  * @author Paweł
  */
 public class ManagerActionListeners {
 
+    /**
+     * Field contains consultant GUI window
+     */
     private ManagerGUI window;
+    
+    /**
+     * Field contains Client protocol to comunicate with server
+     */
     private ClientProtocol protocool;
 
     /**
@@ -101,7 +109,9 @@ public class ManagerActionListeners {
         });
 
         window.getRefreshButton().addActionListener((ActionEvent e) -> {
+            window.setVisible(false);
             refreshTable();
+            window.setVisible(true);
             System.out.println("refresh");
         });
 
@@ -118,7 +128,7 @@ public class ManagerActionListeners {
     }
 
     public void refreshTable() {
-        String[] columns = {"Nazwa firmy", "Numer sali", "Data", "Godzina","Cena"};
+        String[] columns = {"Nazwa firmy", "Numer sali", "Data", "Godzina", "Cena"};
 
         String[] values = protocool.getTransactions();
 

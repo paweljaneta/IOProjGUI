@@ -1,23 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.polsl.listeners;
 
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import pl.polsl.client.gui.ConsultantGUI;
 import pl.polsl.client.protocol.ClientProtocol;
 
 /**
- *
+ * Class with consultant GUI action listeners
+ * 
  * @author Paweł
  */
 public class ConsultantActionListeners {
 
+    /**
+     * Field contains consultant GUI window
+     */
     private ConsultantGUI window;
+    
+    /**
+     * Field contains Client protocol to comunicate with server
+     */
     private ClientProtocol protocool;
 
     /**
@@ -48,13 +50,13 @@ public class ConsultantActionListeners {
                 JOptionPane.showMessageDialog(window, "Błąd akceptacji", "Accept error", JOptionPane.ERROR_MESSAGE);
             }
 
-            String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"};
+            String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Id rezerwacji"};
 
             String[] values = protocool.getRoomsOccupancy();
 
             String[][] data;
 
-            data = new String[values.length][5]; //jekby nie działało to zamienic
+            data = new String[values.length][5];
 
             String colValues[];
             for (int i = 0; i < values.length; i++) {
@@ -69,12 +71,6 @@ public class ConsultantActionListeners {
         });
 
         window.getResignButton().addActionListener((ActionEvent e) -> {
-            //   DefaultTableModel dm = (DefaultTableModel) window.getTable().getModel();
-            //   int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            //    for (int i = rowCount - 1; i >= 0; i--) {
-            //        dm.removeRow(i);
-            //    }
             window.getRoomCombo().setSelectedIndex(0);
             window.getCompanyNameText().setText("");
             window.getDateText().setText("");
@@ -85,7 +81,7 @@ public class ConsultantActionListeners {
         });
 
         window.getRefreshButton().addActionListener((ActionEvent e) -> {
-            String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"};
+            String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Id rezerwacji"};
 
             String[] values = protocool.getRoomsOccupancy();
 

@@ -11,12 +11,20 @@ import pl.polsl.client.gui.ManagerGUI;
 import pl.polsl.client.protocol.ClientProtocol;
 
 /**
+ * Class with login GUI action listeners
  *
  * @author Paweł
  */
 public class LoginActionListeners {
 
+    /**
+     * Field contains consultant GUI window
+     */
     private Login loginWindow;
+    
+    /**
+     * Field contains Client protocol to comunicate with server
+     */
     private ClientProtocol protocool;
 
     KeyListener listener = new KeyAdapter() {
@@ -40,12 +48,14 @@ public class LoginActionListeners {
      *
      * @param window login frame
      */
-    // public LoginActionListeners(Login window, ClientProtocol protocol) {
     public LoginActionListeners(Login window, ClientProtocol clientProtocool) {
         loginWindow = window;
         protocool = clientProtocool;
     }
 
+    /**
+     * Method to login user into server and start a GUI different to user type
+     */
     private void login() {
 
         String username = loginWindow.getUserText().getText();
@@ -59,7 +69,7 @@ public class LoginActionListeners {
                 public void run() {
                     ManagerGUI window = new ManagerGUI();
 
-                    String[] columns = {"Nazwa firmy", "Numer sali","Data", "Godzina", "Cena"};
+                    String[] columns = {"Nazwa firmy", "Numer sali", "Data", "Godzina", "Cena"};
 
                     String[] values = protocool.getTransactions();
 
@@ -88,7 +98,7 @@ public class LoginActionListeners {
                 public void run() {
                     ConsultantGUI window = new ConsultantGUI();
 
-                    String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"};
+                    String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Id rezerwacji"};
 
                     String[] values = protocool.getRoomsOccupancy();
 
@@ -114,9 +124,10 @@ public class LoginActionListeners {
             loginWindow.dispose();
         }
     }
-        /**
-         * Method that adds action listeners to login window
-         */
+
+    /**
+     * Method that adds action listeners to login window
+     */
     public void addActionListeners() {
 
         loginWindow.getUserText().addKeyListener(listener);

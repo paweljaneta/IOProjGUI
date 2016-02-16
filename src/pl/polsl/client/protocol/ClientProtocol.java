@@ -3,26 +3,34 @@ package pl.polsl.client.protocol;
 import java.io.IOException;
 
 /**
+ * Class used to connect client with server, describes communication protocol
  *
  * @author Wojciech Dębski
  * @version 1.0
  */
 public class ClientProtocol {
 
+    /**
+     * Field with connection variables object
+     */
     ConnectionVariables connection;
 
+    /**
+     * Constructor
+     *
+     * @param connection ConnectionVariables object
+     */
     public ClientProtocol(ConnectionVariables connection) {
         this.connection = connection;
     }
 
     /**
-     * Logowanie użytkownika.
+     * Method to login user
      *
      * @param userName user's name
      * @param password user's password
-     * @return null jeżeli operacja przebiegła nieprawidłowo (błąd połączenia
-     * lub błędne dane logowania) w przeciwnym wypadku zwaraca typ zalogowanego
-     * użytkownika
+     * @return null if something goes wrong(connection error or wrong login
+     * date) otherwise it returns user type
      */
     public String login(String userName, String password) {
 
@@ -42,11 +50,11 @@ public class ClientProtocol {
     }
 
     /**
-     * Zwaraca listę transakcji wymagających autoryzacji w formacie: {"ID;Nazwa
-     * firmy;Numer sali;Godzina;Data"}.
+     * Get transaction list waiting for authorisation in format: {"ID;Company
+     * name;Room number;Hour;Date"}.
      *
-     * @return tablicę z wartościami odseprowanymi średnikami gdy operacja się
-     * powiedzie, w przeciwnym razie null
+     * @return String[] array with transactions which are waiting for
+     * authorisation
      */
     public String[] getTransactions() {
         Integer transactionsCounter;
@@ -73,10 +81,10 @@ public class ClientProtocol {
     }
 
     /**
-     * Akceptacja transakcji przez menadżera.
+     * Method to accept transaction by manager
      *
-     * @param id
-     * @return true gdy się uda, false gdy nie
+     * @param id String with transaction id
+     * @return true when everything goes alright
      */
     public boolean acceptTransaction(String id) {
         if (!sendWithConfirm("accepttransaction")) {
@@ -89,10 +97,10 @@ public class ClientProtocol {
     }
 
     /**
-     * Odrzucenie transakcji przez menadżera.
+     * Transaction refusing by chief
      *
-     * @param id
-     * @return true gdy się uda, false gdy nie
+     * @param id String with transaction id
+     * @return true when everything goes alright
      */
     public boolean refuseTransaction(String id) {
         if (!sendWithConfirm("refusetransaction")) {
@@ -105,11 +113,11 @@ public class ClientProtocol {
     }
 
     /**
-     * Pobranie obłożenia sal w formacie: {"Film;Numer Sali;Data
-     * rozpoczęcia;Data zakończenia;Zarezerwowano"}.
+     * Getting rooms occupancy from server in format{"Film;Room number;Start
+     * date ;End date; reserver"}.
      *
-     * @return tablicę z wartościami odseprowanymi średnikami gdy operacja się
-     * powiedzie, w przeciwnym razie null
+     * @return String[] with values separeted with ';' when everything goes
+     * alright
      */
     public String[] getRoomsOccupancy() {
         Integer roomsOccupancyCounter;
@@ -136,9 +144,9 @@ public class ClientProtocol {
     }
 
     /**
-     * Przesłanie transakcji do potwierdzenia.
+     * Method to send transaction to confirming
      *
-     * @return true gdy się uda, false gdy nie
+     * @return true when everything goes alright
      */
     public boolean sendTransaction(String startDate, String endDate, String price,
             String companyName, String roomNumber, String type) {
@@ -174,6 +182,11 @@ public class ClientProtocol {
         }
     }
 
+    /**
+     * Waiting for confirmation
+     *
+     * @return true when connfirmation is approved
+     */
     private boolean awaitConfirm() {
         try {
             if (connection.in.readLine().equals("OK")) {
@@ -184,6 +197,11 @@ public class ClientProtocol {
         return false;
     }
 
+    /**
+     * Waiting for operation done confiration
+     *
+     * @return true when "DONE" was sent
+     */
     private boolean awaitOperationDone() {
         try {
             if (connection.in.readLine().equals("DONE")) {
@@ -194,6 +212,12 @@ public class ClientProtocol {
         return false;
     }
 
+    /**
+     * Method to send confirmation message
+     *
+     * @param message String with message
+     * @return true when server confirms reciving the message
+     */
     private boolean sendWithConfirm(String message) {
         try {
             this.connection.out.writeBytes(message + System.getProperty("line.separator"));

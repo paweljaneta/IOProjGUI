@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.polsl.client.gui;
 
 /**
+ * Manager GUI class
  *
  * @author Paweł
  */
@@ -225,18 +221,38 @@ public class ManagerGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_helpAboutActionPerformed
 
+    /**
+     * get JButton authorize button
+     *
+     * @return JButton
+     */
     public javax.swing.JButton getAuthorizeButton() {
         return authorizeButton;
     }
 
+    /**
+     * get JButton refuse button
+     *
+     * @return JButton
+     */
     public javax.swing.JButton getRefuseButton() {
         return refuseButton;
     }
-    
-    public javax.swing.JButton getRefreshButton(){
+
+    /**
+     * get JButton refresh button
+     *
+     * @return JButton
+     */
+    public javax.swing.JButton getRefreshButton() {
         return refreshButton;
     }
 
+    /**
+     * get JTable get content table
+     *
+     * @return JTable
+     */
     public javax.swing.JTable getTable() {
         return jTable1;
     }
@@ -263,10 +279,20 @@ public class ManagerGUI extends javax.swing.JFrame {
         });
     }
 
+    /**
+     * get JMenuItem file exit
+     *
+     * @return JMenuItem
+     */
     public javax.swing.JMenuItem getFileExit() {
         return fileExit;
     }
 
+    /**
+     * get JMenuItem help about
+     *
+     * @return JMenuItem
+     */
     public javax.swing.JMenuItem getHelpAbout() {
         return helpAbout;
     }

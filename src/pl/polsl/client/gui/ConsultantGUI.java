@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.polsl.client.gui;
 
 /**
- *
+ * Consultant GUI class
+ * 
  * @author Paweł
  */
 public class ConsultantGUI extends javax.swing.JFrame {
@@ -333,42 +329,92 @@ public class ConsultantGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dateTextActionPerformed
 
+    /**
+     * get JButton accept
+     *
+     * @return JButton
+     */
     public javax.swing.JButton getAcceptButton() {
         return acceptButton;
     }
 
+    /**
+     * get JButton resign
+     *
+     * @return JButton
+     */
     public javax.swing.JButton getResignButton() {
         return resignButton;
     }
 
-    public javax.swing.JButton getRefreshButton(){
+    /**
+     * get JButton refresh
+     *
+     * @return JButton
+     */
+    public javax.swing.JButton getRefreshButton() {
         return refreshButton;
     }
-    
+
+    /**
+     * get JTextField company name
+     *
+     * @return JTextField
+     */
     public javax.swing.JTextField getCompanyNameText() {
         return companyNameText;
     }
 
+    /**
+     * get JTextField date
+     *
+     * @return JTextField
+     */
     public javax.swing.JTextField getDateText() {
         return dateText;
     }
 
+    /**
+     * get JTextField end date
+     *
+     * @return JTextField
+     */
     public javax.swing.JTextField getEndDateText() {
         return endDateText;
     }
 
+    /**
+     * get JTextField time
+     *
+     * @return JTextField
+     */
     public javax.swing.JTextField getTimeText() {
         return timeText;
     }
 
+    /**
+     * get JTextField end time
+     *
+     * @return JTextField
+     */
     public javax.swing.JTextField getEndTimeText() {
         return endTimeText;
     }
 
+    /**
+     * get JTextField price
+     *
+     * @return JTextField
+     */
     public javax.swing.JTextField getPriceText() {
         return priceText;
     }
 
+    /**
+     * get JTable gui table
+     *
+     * @return JTable
+     */
     public javax.swing.JTable getTable() {
         return jTable1;
     }
@@ -395,14 +441,29 @@ public class ConsultantGUI extends javax.swing.JFrame {
         });
     }
 
+    /**
+     * get JMenuItem file exit
+     *
+     * @return JMenuItem
+     */
     public javax.swing.JMenuItem getFileExit() {
         return fileExit;
     }
 
+    /**
+     * get JMenuItem help about
+     *
+     * @return JMenuItem
+     */
     public javax.swing.JMenuItem getHelpAbout() {
         return helpAbout;
     }
 
+    /**
+     * get JCombo room number
+     *
+     * @return JCombo
+     */
     public javax.swing.JComboBox<String> getRoomCombo() {
         return nrSaliCombo;
     }

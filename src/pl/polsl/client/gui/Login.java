@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.polsl.client.gui;
 
 /**
+ * Login GUI class
  *
  * @author Paweł
  */
@@ -109,19 +105,32 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
-   
-    public javax.swing.JButton getLoginButton(){
+    /**
+     * get JButton login button
+     *
+     * @return JButton
+     */
+    public javax.swing.JButton getLoginButton() {
         return loginButton;
     }
-    
-    public javax.swing.JTextField getPasswordText(){
+
+    /**
+     * get JTextField with password
+     *
+     * @return JTextField
+     */
+    public javax.swing.JTextField getPasswordText() {
         return passwordText;
     }
-    
-    public javax.swing.JTextField getUserText(){
+    /**
+     * get JTextField with username
+     *
+     * @return JTextField
+     */
+    public javax.swing.JTextField getUserText() {
         return userText;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
