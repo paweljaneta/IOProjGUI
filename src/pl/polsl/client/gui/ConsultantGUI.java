@@ -44,6 +44,12 @@ public class ConsultantGUI extends javax.swing.JFrame {
         acceptButton = new javax.swing.JButton();
         resignButton = new javax.swing.JButton();
         nrSaliCombo = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        endTimeText = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        priceText = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        endDateText = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         fileExit = new javax.swing.JMenuItem();
@@ -89,7 +95,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Obsługa reklam", jPanel2);
 
-        jLabel4.setText("Data");
+        jLabel4.setText("Data rozpoczęcia");
 
         dateText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +131,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
 
         jLabel1.setText("NR Sali");
 
-        jLabel2.setText("Godzina");
+        jLabel2.setText("Godzina rozpoczęcia");
 
         timeText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,30 +160,49 @@ public class ConsultantGUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Godzina zakończenia");
+
+        jLabel6.setText("Cena");
+
+        jLabel7.setText("Data zakończenia");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(acceptButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(resignButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(92, 92, 92)
+                        .addComponent(priceText, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(endTimeText, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel1)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(companyNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nrSaliCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(523, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel7))
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nrSaliCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(companyNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(dateText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                .addComponent(endDateText, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(timeText)
+                                .addGap(43, 43, 43)))))
+                .addContainerGap(517, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap(245, Short.MAX_VALUE)
@@ -201,13 +226,25 @@ public class ConsultantGUI extends javax.swing.JFrame {
                     .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(endDateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(64, 64, 64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(endTimeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(priceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(resignButton)
-                    .addComponent(acceptButton))
-                .addContainerGap(291, Short.MAX_VALUE))
+                    .addComponent(acceptButton)
+                    .addComponent(resignButton))
+                .addContainerGap(259, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -287,9 +324,20 @@ public class ConsultantGUI extends javax.swing.JFrame {
         return dateText;
     }
 
+    public javax.swing.JTextField getEndDateText() {
+        return endDateText;
+    }
 
     public javax.swing.JTextField getTimeText() {
         return timeText;
+    }
+
+    public javax.swing.JTextField getEndTimeText() {
+        return endTimeText;
+    }
+    
+        public javax.swing.JTextField getPriceText() {
+        return priceText;
     }
 
     public javax.swing.JTable getTable() {
@@ -297,12 +345,13 @@ public class ConsultantGUI extends javax.swing.JFrame {
     }
 
     /**
-     *Sets column names and values in cells
-     * format: {{"",""},{"",""},{"",""}} two columns, three rows
+     * Sets column names and values in cells format: {{"",""},{"",""},{"",""}}
+     * two columns, three rows
+     *
      * @param columns table of column names
      * @param values table of values in cells
      */
-    public void setTable(String[] columns,String[][] values) {
+    public void setTable(String[] columns, String[][] values) {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 values,
                 columns
@@ -324,8 +373,8 @@ public class ConsultantGUI extends javax.swing.JFrame {
     public javax.swing.JMenuItem getHelpAbout() {
         return helpAbout;
     }
-    
-    public javax.swing.JComboBox<String> getRoomCombo(){
+
+    public javax.swing.JComboBox<String> getRoomCombo() {
         return nrSaliCombo;
     }
 
@@ -333,14 +382,19 @@ public class ConsultantGUI extends javax.swing.JFrame {
     private javax.swing.JButton acceptButton;
     private javax.swing.JTextField companyNameText;
     private javax.swing.JTextField dateText;
+    private javax.swing.JTextField endDateText;
+    private javax.swing.JTextField endTimeText;
     private javax.swing.JMenuItem fileExit;
     private javax.swing.JMenuItem helpAbout;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
@@ -350,6 +404,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> nrSaliCombo;
+    private javax.swing.JTextField priceText;
     private javax.swing.JButton resignButton;
     private javax.swing.JTextField timeText;
     // End of variables declaration//GEN-END:variables

@@ -25,7 +25,7 @@ public class Client {
     @SuppressWarnings("ResultOfObjectAllocationIgnored")
     public static void main(String[] args) {
         Integer port = 6789;
-        String ip = "localhost";
+        String ip = "192.168.130.1";
         if (args.length == 2) {
             ip = args[0];
             port = Integer.parseInt(args[1]);

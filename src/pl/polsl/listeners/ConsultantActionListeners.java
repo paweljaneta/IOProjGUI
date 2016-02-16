@@ -44,22 +44,26 @@ public class ConsultantActionListeners {
 
         window.getAcceptButton().addActionListener((ActionEvent e) -> {
 
-            if (!protocool.sendTransaction(window.getCompanyNameText().getText(), (String) window.getRoomCombo().getSelectedItem(), window.getTimeText().getText(), window.getDateText().getText())) {
+            if (!protocool.sendTransaction(window.getDateText().getText()+" "+window.getTimeText().getText(),window.getEndDateText().getText()+" "+window.getEndTimeText().getText(),window.getPriceText().getText(),window.getCompanyNameText().getText(),(String)window.getRoomCombo().getSelectedItem(),"0")) {
                 JOptionPane.showMessageDialog(window, "Błąd akceptacji", "Accept error", JOptionPane.ERROR_MESSAGE);
             }
 
         });
 
         window.getResignButton().addActionListener((ActionEvent e) -> {
-            DefaultTableModel dm = (DefaultTableModel) window.getTable().getModel();
-            int rowCount = dm.getRowCount();
+         //   DefaultTableModel dm = (DefaultTableModel) window.getTable().getModel();
+         //   int rowCount = dm.getRowCount();
             //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
+        //    for (int i = rowCount - 1; i >= 0; i--) {
+        //        dm.removeRow(i);
+        //    }
+        window.getRoomCombo().setSelectedIndex(0);
             window.getCompanyNameText().setText("");
             window.getDateText().setText("");
             window.getTimeText().setText("");
+            window.getEndTimeText().setText("");
+            window.getEndDateText().setText("");
+            window.getPriceText().setText("");
         });
 
         window.getFileExit().addActionListener((ActionEvent e) -> {
