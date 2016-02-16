@@ -59,18 +59,18 @@ public class LoginActionListeners {
                 public void run() {
                     ManagerGUI window = new ManagerGUI();
 
-                    String[] columns = {"Nazwa firmy", "Numer sali","Data", "Godzina"};
+                    String[] columns = {"Nazwa firmy", "Numer sali","Data", "Godzina", "Cena"};
 
                     String[] values = protocool.getTransactions();
 
                     String[][] data;
 
-                    data = new String[values.length][4];
+                    data = new String[values.length][5];
 
                     String colValues[];
                     for (int i = 0; i < values.length; i++) {
                         colValues = values[i].split(";");
-                        for (int j = 0; j < 4; j++) {
+                        for (int j = 0; j < 5; j++) {
                             data[i][j] = colValues[j + 1];
                         }
                     }
