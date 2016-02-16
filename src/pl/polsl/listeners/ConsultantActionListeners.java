@@ -44,20 +44,38 @@ public class ConsultantActionListeners {
 
         window.getAcceptButton().addActionListener((ActionEvent e) -> {
 
-            if (!protocool.sendTransaction(window.getDateText().getText()+" "+window.getTimeText().getText(),window.getEndDateText().getText()+" "+window.getEndTimeText().getText(),window.getPriceText().getText(),window.getCompanyNameText().getText(),(String)window.getRoomCombo().getSelectedItem(),"0")) {
+            if (!protocool.sendTransaction(window.getDateText().getText() + " " + window.getTimeText().getText(), window.getEndDateText().getText() + " " + window.getEndTimeText().getText(), window.getPriceText().getText(), window.getCompanyNameText().getText(), (String) window.getRoomCombo().getSelectedItem(), "0")) {
                 JOptionPane.showMessageDialog(window, "Błąd akceptacji", "Accept error", JOptionPane.ERROR_MESSAGE);
             }
+
+            String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"};
+
+            String[] values = protocool.getRoomsOccupancy();
+
+            String[][] data;
+
+            data = new String[values.length][5]; //jekby nie działało to zamienic
+
+            String colValues[];
+            for (int i = 0; i < values.length; i++) {
+                colValues = values[i].split(";");
+                for (int j = 0; j < 5; j++) {
+                    data[i][j] = colValues[j];
+                }
+            }
+
+            window.setTable(columns, data);
 
         });
 
         window.getResignButton().addActionListener((ActionEvent e) -> {
-         //   DefaultTableModel dm = (DefaultTableModel) window.getTable().getModel();
-         //   int rowCount = dm.getRowCount();
+            //   DefaultTableModel dm = (DefaultTableModel) window.getTable().getModel();
+            //   int rowCount = dm.getRowCount();
             //Remove rows one by one from the end of the table
-        //    for (int i = rowCount - 1; i >= 0; i--) {
-        //        dm.removeRow(i);
-        //    }
-        window.getRoomCombo().setSelectedIndex(0);
+            //    for (int i = rowCount - 1; i >= 0; i--) {
+            //        dm.removeRow(i);
+            //    }
+            window.getRoomCombo().setSelectedIndex(0);
             window.getCompanyNameText().setText("");
             window.getDateText().setText("");
             window.getTimeText().setText("");

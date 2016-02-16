@@ -39,7 +39,7 @@ public class Client {
                 dialog.setVisible(true);
             });
         } catch (IOException ex) {
-            new JOptionPane(ex.getMessage(), JOptionPane.ERROR_MESSAGE, JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, "Bład połączenia", "Connection error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
