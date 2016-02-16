@@ -153,7 +153,7 @@ public class ConsultantGUI extends javax.swing.JFrame {
             }
         });
 
-        nrSaliCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        nrSaliCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "13", "14", "15", "16", "17", "18" }));
         nrSaliCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nrSaliComboActionPerformed(evt);
