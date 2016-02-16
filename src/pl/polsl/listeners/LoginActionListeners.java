@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.polsl.listeners;
 
 import java.awt.event.ActionEvent;
@@ -29,7 +24,7 @@ public class LoginActionListeners {
             if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 
                 login();
-                
+
             }
         }
     };
@@ -59,23 +54,24 @@ public class LoginActionListeners {
                     ManagerGUI window = new ManagerGUI();
 
                     String[] columns = {"Nazwa firmy", "Numer sali", "Godzina", "Data"};
-                    
-                    String [] values = protocool.getRoomsOccupancy();
-                    
-                    String[][] data ;
 
-                    data = new String[values.length/5][4];
-                    
-                    for (int i=0;i<values.length/5;i+=5){
-                        data[i][0]=values[i+1];
-                        data[i][1]=values[i+2];
-                        data[i][2]=values[i+3];
-                        data[i][3]=values[i+4];
+                    String[] values = protocool.getTransactions();
+
+                    String[][] data;
+
+                    data = new String[values.length / 5][4];
+
+                    String colValues[];
+                    for (int i = 0; i < values.length; i++) {
+                        colValues = values[i].split(";");
+                        for (int j = 0; j < 4; j++) {
+                            data[i][j] = colValues[j+1];
+                        }
                     }
-                    
+
                     window.setTable(columns, data);
 
-                    ManagerActionListeners listeners = new ManagerActionListeners(window,protocool);
+                    ManagerActionListeners listeners = new ManagerActionListeners(window, protocool);
                     listeners.addActionListeners();
                     window.setVisible(true);
                 }
@@ -87,25 +83,24 @@ public class LoginActionListeners {
                     ConsultantGUI window = new ConsultantGUI();
 
                     String[] columns = {"Film", "Numer Sali", "Data rozpoczęcia", "Data zakończenia", "Zarezerwowano"};
-                    
-                    String [] values = protocool.getRoomsOccupancy();
-                    
+
+                    String[] values = protocool.getRoomsOccupancy();
+
                     String[][] data;
-                    
-                    data= new String[values.length/5][5]; //jekby nie działało to zamienic
-                    
-                    for(int i=0;i<values.length/5;i+=5){
-                        data[i][0]=values[i];
-                        data[i][1]=values[i+1];
-                        data[i][2]=values[i+2];
-                        data[i][3]=values[i+3];
-                        data[i][4]=values[i+4];
+
+                    data = new String[values.length / 5][5]; //jekby nie działało to zamienic
+
+                    String colValues[];
+                    for (int i = 0; i < values.length; i++) {
+                        colValues = values[i].split(";");
+                        for (int j = 0; j < 5; j++) {
+                            data[i][j] = colValues[j];
+                        }
                     }
-                    
 
                     window.setTable(columns, data);
 
-                    ConsultantActionListeners listeners = new ConsultantActionListeners(window,protocool);
+                    ConsultantActionListeners listeners = new ConsultantActionListeners(window, protocool);
                     listeners.addActionListeners();
                     window.setVisible(true);
                 }
