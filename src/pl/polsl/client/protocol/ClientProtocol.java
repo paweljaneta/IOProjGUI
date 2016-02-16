@@ -140,20 +140,27 @@ public class ClientProtocol {
      *
      * @return true gdy się uda, false gdy nie
      */
-    public boolean sendTransaction(String companyName, String room, String time, String date) {
+    public boolean sendTransaction(String startDate, String endDate, String price,
+            String companyName, String roomNumber, String type) {
         if (!sendWithConfirm("sendtransaction")) {
+            return false;
+        }
+        if (!sendWithConfirm(startDate)) {
+            return false;
+        }
+        if (!sendWithConfirm(endDate)) {
+            return false;
+        }
+        if (!sendWithConfirm(price)) {
             return false;
         }
         if (!sendWithConfirm(companyName)) {
             return false;
         }
-        if (!sendWithConfirm(room)) {
+        if (!sendWithConfirm(roomNumber)) {
             return false;
         }
-        if (!sendWithConfirm(time)) {
-            return false;
-        }
-        if (!sendWithConfirm(date)) {
+        if (!sendWithConfirm(type)) {
             return false;
         }
         return awaitOperationDone();
