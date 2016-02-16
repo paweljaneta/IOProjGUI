@@ -59,13 +59,13 @@ public class LoginActionListeners {
                 public void run() {
                     ManagerGUI window = new ManagerGUI();
 
-                    String[] columns = {"Nazwa firmy", "Numer sali", "Godzina", "Data"};
+                    String[] columns = {"Nazwa firmy", "Numer sali","Data", "Godzina"};
 
                     String[] values = protocool.getTransactions();
 
                     String[][] data;
 
-                    data = new String[values.length / 5][4];
+                    data = new String[values.length][4];
 
                     String colValues[];
                     for (int i = 0; i < values.length; i++) {
@@ -83,7 +83,7 @@ public class LoginActionListeners {
                 }
             });
             loginWindow.dispose();
-        } else if (privLevel.equalsIgnoreCase("CONSULATNT")) {
+        } else if (privLevel.equalsIgnoreCase("CONSULTANT")) {
             javax.swing.SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     ConsultantGUI window = new ConsultantGUI();
@@ -94,7 +94,7 @@ public class LoginActionListeners {
 
                     String[][] data;
 
-                    data = new String[values.length / 5][5]; //jekby nie działało to zamienic
+                    data = new String[values.length][5]; //jekby nie działało to zamienic
 
                     String colValues[];
                     for (int i = 0; i < values.length; i++) {

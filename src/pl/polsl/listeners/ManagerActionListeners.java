@@ -58,13 +58,14 @@ public class ManagerActionListeners {
                     }
                     //to jest szukana transakcja
                     if (counter == 4) {
-                        dm.setValueAt("TRUE", selectedRow(), 5);
                         transactionID = data[0];
                     }
                 }
 
                 if (!protocool.acceptTransaction(transactionID)) {
                     JOptionPane.showMessageDialog(window, "Błąd akceptacji", "Accept error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    refreshTable();
                 }
 
             }
@@ -87,14 +88,14 @@ public class ManagerActionListeners {
                     }
                     //to jest szukana transakcja
                     if (counter == 4) {
-                        dm.setValueAt("TRUE", selectedRow(), 5);
                         transactionID = data[0];
                     }
                 }
                 if (!protocool.refuseTransaction(transactionID)) {
                     JOptionPane.showMessageDialog(window, "Błąd odmowy", "Refuse error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    refreshTable();
                 }
-
             }
 
         });
@@ -109,6 +110,26 @@ public class ManagerActionListeners {
 
         });
 
+    }
+
+    public void refreshTable() {
+        String[] columns = {"Nazwa firmy", "Numer sali", "Data", "Godzina"};
+
+        String[] values = protocool.getTransactions();
+
+        String[][] data;
+
+        data = new String[values.length][4];
+
+        String colValues[];
+        for (int i = 0; i < values.length; i++) {
+            colValues = values[i].split(";");
+            for (int j = 0; j < 4; j++) {
+                data[i][j] = colValues[j + 1];
+            }
+        }
+
+        window.setTable(columns, data);
     }
 
 }
